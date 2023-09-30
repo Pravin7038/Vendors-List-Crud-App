@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addVendor, getData } from '../redux/action'
 import VendorCard from './VendorCard'
 import axios from "axios"
+import { base_url } from '../utils/base_url'
 let total;
 
 const VendorList = () => {
@@ -51,7 +52,7 @@ const VendorList = () => {
     }, [page])
 
     const TotalPages = () => {
-        axios.get(`http://localhost:8080/vendors/`).then((res) => {
+        axios.get(`${base_url}/`).then((res) => {
             return total = res.data.length
         });
     }
@@ -62,7 +63,7 @@ const VendorList = () => {
             <VStack>
                 <Heading>Vendor List</Heading>
                 <HStack width="95%" margin="auto" justifyContent="flex-end">
-                    <Button colorScheme="blue" onClick={onOpen}>Add New Vendor</Button>
+                    <Button fontSize="18px" fontWeight="bold" colorScheme="blue" onClick={onOpen}>Add New Vendor</Button>
                     <Modal
                         isOpen={isOpen}
                         onClose={onClose}
