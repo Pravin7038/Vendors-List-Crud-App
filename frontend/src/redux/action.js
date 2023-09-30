@@ -1,12 +1,13 @@
 import { DataDeleteSuccess, DataLoadinFailure, DataLoadinPending, DataLoadinSuccess, DataPatchSuccess, DataPostSuccess } from "./actionType"
 import axios from "axios"
+import { base_url } from "../utils/base_url";
 
 
 //get data from server
 export const getData = (page = 1) => (dispatch) => {
 
     dispatch({ type: DataLoadinPending });
-    axios.get(`http://localhost:8080/vendors/?page=${page}&limit=5`).then((res) => {
+    axios.get(`${base_url}?page=${page}&limit=5`).then((res) => {
         dispatch({ type: DataLoadinSuccess, payload: res.data })
     });
     dispatch({ type: DataLoadinFailure });
@@ -17,7 +18,7 @@ export const getData = (page = 1) => (dispatch) => {
 export const editData = (id, obj) => (dispatch) => {
 
     dispatch({ type: DataLoadinPending });
-    return axios.patch(`http://localhost:8080/vendors/${id}`, obj).then((res) => {
+    return axios.patch(`${base_url}${id}`, obj).then((res) => {
         dispatch({ type: DataPatchSuccess })
 
     }).catch((error) => {
@@ -31,8 +32,8 @@ export const editData = (id, obj) => (dispatch) => {
 export const deleteVendor = (id)=>(dispatch) => {
 
     dispatch({ type: DataLoadinPending });
-     axios.delete(`http://localhost:8080/vendors/${id}`).then((res) => {
-        return dispatch({ type: DataDeleteSuccess,})
+    return axios.delete(`${base_url}${id}`).then((res) => {
+           dispatch({ type: DataDeleteSuccess,})
     }).catch((error) => {
         dispatch({ type: DataLoadinFailure });
     })
@@ -44,7 +45,7 @@ export const deleteVendor = (id)=>(dispatch) => {
 export const addVendor = (obj)=>(dispatch)=>{
 
     dispatch({ type: DataLoadinPending });
-    axios.post(`http://localhost:8080/vendors/add`,obj).then((res)=>{
+    axios.post(`${base_url}add`,obj).then((res)=>{
     console.log(res.data)
          dispatch({type:DataPostSuccess});
     })

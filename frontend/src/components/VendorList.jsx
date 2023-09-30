@@ -9,7 +9,6 @@ let total;
 
 const VendorList = () => {
     const data = useSelector((store) => store.data);
-    const [state, setState] = useState(0)
     const [page, setPage] = useState(1);
     const dispatch = useDispatch();
     const [name, setName] = useState("");
@@ -49,7 +48,7 @@ const VendorList = () => {
 
         dispatch(getData(page));
 
-    }, [page, state])
+    }, [page])
 
     const TotalPages = () => {
         axios.get(`http://localhost:8080/vendors/`).then((res) => {
@@ -107,7 +106,7 @@ const VendorList = () => {
                     </Thead>
                     {data?.map((ele, ind) => {
 
-                        return <VendorCard key={ind} {...ele} state={state} setState={setState} />
+                        return <VendorCard key={ind} {...ele} page={page}/>
 
                     })}
 
