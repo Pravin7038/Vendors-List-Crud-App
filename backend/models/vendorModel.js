@@ -11,6 +11,6 @@ const venderSchema = new mongoose.Schema({
     zip_code: { type: String }
 })
 
-const Vendor = mongoose.model("vender",venderSchema);
+const Vendor = mongoose.model("vendor",venderSchema);
 
 module.exports = Vendor;
