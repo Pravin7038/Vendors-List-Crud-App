@@ -1,4 +1,4 @@
-import { Button, FormControl, FormLabel, Heading, HStack, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Table, Text, Th, Thead, Tr, useDisclosure, VStack } from '@chakra-ui/react'
+import { Button, FormControl, Heading, HStack, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Table, Text, Th, Thead, Tr, useDisclosure, VStack } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -96,7 +96,7 @@ const VendorList = () => {
                 </HStack>
                 <Table margin="auto">
                     <Thead>
-                        <Tr>
+                        <Tr boxShadow="rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px">
                             <Th fontSize="20px" textAlign="center">Vendor Name</Th>
                             <Th fontSize="20px" textAlign="center">Bank Account Number</Th>
                             <Th fontSize="20px" textAlign="center">Bank Name</Th>
