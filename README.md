@@ -1,1 +1,1 @@
-# Vendors-List-Crud-App
+# Project Name = Vendors List Full Stack Crud App
