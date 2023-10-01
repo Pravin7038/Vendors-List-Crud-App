@@ -1,4 +1,4 @@
-# Project Name = Vendors List Full Stack Crud App
+# Project Name : Vendors List Full Stack Crud App
 
 ## Deployed link
 
