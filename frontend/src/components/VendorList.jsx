@@ -71,7 +71,7 @@ const VendorList = () => {
                     >
                         <ModalOverlay />
                         <ModalContent>
-                            <ModalHeader>Create your account</ModalHeader>
+                            <ModalHeader>Add new vendor</ModalHeader>
                             <ModalCloseButton />
                             <ModalBody pb={6}>
                                 <FormControl>
@@ -95,14 +95,14 @@ const VendorList = () => {
                         </ModalContent>
                     </Modal>
                 </HStack>
-                <Table margin="auto">
+                <Table margin="auto" width="95%">
                     <Thead>
                         <Tr boxShadow="rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px">
-                            <Th fontSize="20px" textAlign="center">Vendor Name</Th>
-                            <Th fontSize="20px" textAlign="center">Bank Account Number</Th>
-                            <Th fontSize="20px" textAlign="center">Bank Name</Th>
-                            <Th fontSize="20px" textAlign="center">Edit</Th>
-                            <Th fontSize="20px" textAlign="center">Delete</Th>
+                            <Th fontSize="20px" >Vendor Name</Th>
+                            <Th fontSize="20px" >Bank Account Number</Th>
+                            <Th fontSize="20px" >Bank Name</Th>
+                            <Th fontSize="20px" >Edit</Th>
+                            <Th fontSize="20px" >Delete</Th>
                         </Tr>
                     </Thead>
                     {data.length === 0 ? <Spinner emptyColor="gray.200" thickness="4px" speed="0.65s" size="xl" position="fixed" left="45%" top="45%" color="red.500" /> :

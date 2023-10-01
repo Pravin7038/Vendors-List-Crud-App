@@ -32,11 +32,11 @@ const VendorCard = ({ name, account_number, bank_name, _id, page }) => {
         <>
             <Tbody>
                 <Tr fontSize="18px" fontWeight="bold" boxShadow="rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset">
-                    <Td textAlign="center">{name}</Td>
-                    <Td textAlign="center">{account_number}</Td>
-                    <Td textAlign="center">{bank_name}</Td>
-                    <Td textAlign="center"><Link to={`/edit-vendor/${_id}`}><Button colorScheme="green">Edit</Button></Link></Td>
-                    <Td textAlign="center"><Button fontSize="18px" fontWeight="bold" colorScheme="red" onClick={onOpen}>Delete</Button></Td>
+                    <Td >{name}</Td>
+                    <Td >{account_number}</Td>
+                    <Td >{bank_name}</Td>
+                    <Td ><Link to={`/edit-vendor/${_id}`}><Button colorScheme="green">Edit</Button></Link></Td>
+                    <Td ><Button fontSize="18px" fontWeight="bold" colorScheme="red" onClick={onOpen}>Delete</Button></Td>
                 </Tr>
             </Tbody>
             <AlertDialog
