@@ -1,7 +1,7 @@
 import { AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, Button, Tbody, Td, Tr, useDisclosure } from '@chakra-ui/react'
 import axios from 'axios'
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import { Link } from 'react-router-dom'
 import { deleteVendor } from '../redux/action'
 import { DataLoadinFailure, DataLoadinPending, DataLoadinSuccess } from '../redux/actionType'
@@ -11,7 +11,6 @@ const VendorCard = ({ name, account_number, bank_name, _id, page }) => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const cancelRef = React.useRef()
-
     const dispatch = useDispatch();
     const handleDelete = (_id) => {
         onClose()

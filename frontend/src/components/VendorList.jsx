@@ -1,4 +1,4 @@
-import { Button, FormControl, Heading, HStack, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Table, Text, Th, Thead, Tr, useDisclosure, VStack } from '@chakra-ui/react'
+import { Box, Button, FormControl, Heading, HStack, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Spinner, Table, Text, Th, Thead, Tr, useDisclosure, VStack } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -21,7 +21,8 @@ const VendorList = () => {
     const [country, setcountry] = useState("");
     const [zip_code, setzipcode] = useState("");
     const { isOpen, onOpen, onClose } = useDisclosure()
-
+    const isLoading = useSelector((store) => store.isLoading);
+    console.log(isLoading)
     const handleAdd = (e) => {
         e.preventDefault();
         let obj = {
@@ -85,7 +86,6 @@ const VendorList = () => {
                                     {/* <Input onClick={handleAdd} type="submit"></Input> */}
                                 </FormControl>
                             </ModalBody>
-
                             <ModalFooter>
                                 <Button onClick={handleAdd} colorScheme='blue' mr={3}>
                                     Add
@@ -105,14 +105,13 @@ const VendorList = () => {
                             <Th fontSize="20px" textAlign="center">Delete</Th>
                         </Tr>
                     </Thead>
-                    {data?.map((ele, ind) => {
+                    {data.length === 0 ? <Spinner emptyColor="gray.200" thickness="4px" speed="0.65s" size="xl" position="fixed" left="45%" top="45%" color="red.500" /> :
+                        data?.map((ele, ind) => {
 
-                        return <VendorCard key={ind} {...ele} page={page}/>
+                            return <VendorCard key={ind} {...ele} page={page} />
 
-                    })}
-
+                        })}
                 </Table>
-
             </VStack>
             <HStack bottom="10%" position="fixed" width="100%" justifyContent="center">
                 <Button colorScheme="orange" isDisabled={page === 1} onClick={() => { setPage(page - 1) }}>Prev</Button>
