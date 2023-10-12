@@ -1,1 +1,0 @@
-export const base_url = `https://vendor-list-backend.onrender.com/vendors/`
